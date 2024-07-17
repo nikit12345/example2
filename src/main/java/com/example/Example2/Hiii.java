@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping
 public class Hiii {
 
-	@GetMapping
+	@GetMapping("/hii")
 	public String hi() {
 		return "jbscs";
 	}
