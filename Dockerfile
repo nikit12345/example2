@@ -1,14 +1,14 @@
-# Use OpenJDK 17 base image
+# Use an official OpenJDK runtime as a parent image
 FROM openjdk:17
 
-# Expose port 8080
-EXPOSE 8080
-
-# Add the JAR file from the build context to the container
-ADD target/example2.jar /app/example2.jar
-
-# Set the working directory
+# Set the working directory in the container
 WORKDIR /app
 
-# Define the entry point to run the JAR file
-ENTRYPOINT ["java", "-jar", "example2.jar"]
+# Copy the JAR file from the host to the container
+COPY example2.jar /app/example2.jar
+
+# Expose the port your application runs on
+EXPOSE 8080
+
+# Run the application
+ENTRYPOINT ["java", "-jar", "/app/example2.jar"]
