@@ -10,6 +10,7 @@ public class Hiii {
 
 	@GetMapping()
 	public String hi() {
+		System.out.println("sdad");
 		return "jbscs";
 	}
 }
